@@ -1,4 +1,4 @@
-/* 
+/*
 Fonts from mock up:
 
 EME Bar -  Roboto Bold 14px (Google Font)
@@ -17,7 +17,7 @@ Race Icon Label - Montserrat Bold 16px
 Copyright Notice - Roboto 16px
 */
 
-/* 
+/*
 Colors from mock up:
 
 EME Bar - #0c1c33 (main), #183561 (border)
@@ -36,3 +36,271 @@ Races Gold Bar Gradient (#f0e4d2, #fab83c)
 Race icon button (#fab83c or rgb(250,184,60))
 
 */
+$center-block: 0 auto;
+
+// Colors
+$black: #000;
+$white: #fff;
+$navy: #0c1c33;
+$light-yellow: #f0e4d2;
+$dark-yellow: #fab83c;
+
+body {
+  background-color: $white;
+  font-size: 16px;
+  margin: 0;
+}
+
+a, a:visited {
+  color: $black;
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #555;
+}
+
+h2 {
+  background: -webkit-linear-gradient(#f0e4d2, #fab83c);
+  -webkit-background-clip: text;
+  color: white;
+  -webkit-text-fill-color: transparent;
+}
+
+h2, h3 {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+span {
+  width: 100%;
+}
+
+p, span {
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+p {
+  text-align: center;
+}
+
+.content-wrapper {
+  margin: $center-block;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+.bg-navy {
+  background-color: $navy;
+  color: $white;
+  a {
+    color: $white;
+  }
+}
+
+.right {
+  float: right;
+}
+
+
+
+.container {
+  border: 1px solid black;
+  margin: $center-block;
+  max-width: 1440px;
+  header {
+    position: fixed;
+    width: 100%;
+    top: -1px;
+    z-index: 3;
+    .eme {
+      border-bottom: 1px solid #183561;
+      box-sizing: border-box;
+      padding: .5rem 1rem;
+      width: 100%;
+      .right {
+        display: inline-block;
+        padding-top: 13px;
+      }
+      a {
+        font-family: 'Roboto', Helvetica, sans-serif;
+        font-size: .875rem;
+        font-weight: 700;
+      }
+    }
+    nav {
+      background: linear-gradient($white, 85%, #ececec);
+      .content-wrapper {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        font-weight: 700;
+        padding: .5rem;
+        a {
+          justify-content: center;
+          margin: auto 1rem;
+        }
+        .play-now {
+          flex: 8;
+          text-align: right;
+          p {
+            background-color: rgba(0,199,250, .8);
+            border: 2px solid rgb(0,199,250);
+            border-radius: .25rem;
+            color: $white;
+            display: inline-block;
+            float: right;
+            padding: .5rem 1rem;
+          }
+          p:hover {
+            background-color: rgba(0,199,250, .6);
+          }
+        }
+      }
+    }
+  }
+  #gameplay {
+    background-color: #566aa2;
+    background: url('../images/background-tac.jpg') no-repeat center center;
+    box-sizing: border-box;
+    margin-top: 158px;
+    padding: 3rem 1rem 2rem 1rem;
+    position: relative;
+    .content-wrapper {
+      max-width: 1000px;
+      text-align: center;
+      iframe {
+        border: 2px solid #00c7fa;
+      }
+      h2 {
+        font-size: 2.66rem;
+        text-align: center;
+        text-shadow: $black 1px 0 3.12rem;
+      }
+      p {
+        color: $white;
+        font-size: 1.12rem;
+        text-shadow: $black 1px 0 1.6rem;
+      }
+    }
+  }
+  #gameplay::before {
+    background: linear-gradient(to right, #566aa2 15%, transparent);
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 15%;
+    z-index: 1;
+  }
+  #gameplay::after {
+    background: linear-gradient(to left, #566aa2 15%, transparent);
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 15%;
+    z-index: 1;
+  }
+  #races::before {
+    background: url('../images/divider.png') no-repeat center;
+    content: '';
+    position: absolute;
+    top: -50px;
+    max-width: 800px;
+    width: 100%;
+    height: 90px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 2;
+  }
+  #races {
+    background: url('../images/background_races.jpg') no-repeat top center;
+    position: relative;
+    h2 {
+      font-size: 4.5rem;
+      margin: 0;
+      padding: 2rem 0;
+      text-shadow: $black 1px 0 4.8rem;
+    }
+    h3 {
+      font-size: 3rem
+    }
+    .yellow-banner {
+      position: absolute;
+      width: 100%;
+      top: 25%;
+      background: linear-gradient(to left, #f0e4d2 5%, #fab83c, #f0e4d2 95%);
+      height: 300px;
+    }
+    .race {
+      display: none;
+      margin: 0 auto;
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+      img {
+        max-width: 300px;
+        flex: 3;
+      }
+      .race-content {
+        box-sizing:border-box;
+        display: inline-block;
+        padding: 0 5%;
+        flex: 7;
+        text-align: center;
+      }
+    }
+    .race.active {
+      display: flex;
+    }
+    #race-selections {
+      margin: 3rem 0 0 0;
+      .race-selection {
+        cursor: pointer;
+        display: inline-block;
+        position:relative;
+        margin: 0 1rem;
+        height: 150px;
+        width: 100px;
+        .skew-box {
+          background-color: $light-yellow;
+          border: 2px solid $dark-yellow;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+          transform: skew(-10deg);
+          border-radius: 1rem;
+        }
+        .skew-box:hover {
+          background-color: $dark-yellow;
+        }
+        img {
+          padding:12.5px;
+          position: absolute;
+          pointer-events: none;
+          z-index: 1;
+        }
+        p {
+          font-family: 'Montserrat';
+          font-weight: 700;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          margin-left: -50%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 4rem;
+    padding: 1rem;
+  }
+}
